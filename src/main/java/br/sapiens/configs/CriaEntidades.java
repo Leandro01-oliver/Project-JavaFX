@@ -1,9 +1,12 @@
 package br.sapiens.configs;
 
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 public class CriaEntidades {
+
     public CriaEntidades(Connection con) throws SQLException {
         String endereco = "" +
                 "CREATE TABLE `endereco` (\n" +

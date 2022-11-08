@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexaoSingleton {
+
     private final String jdbcURL = "jdbc:h2:mem:test";
     static Connection connection;
 
@@ -14,4 +15,5 @@ public class ConexaoSingleton {
             connection = DriverManager.getConnection(jdbcURL);
         return connection;
     }
+
 }
