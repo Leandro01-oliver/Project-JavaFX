@@ -95,13 +95,20 @@ public class EnderecoDao implements CrudRepository<Endereco,Integer> {
 
 
     @Override
-    public void delete(Endereco entity) {
-
+    public void delete(Endereco entity) throws SQLException {
+        String sql = "DELETE FROM endereco";
+        PreparedStatement pstmt = conn.prepareStatement(sql,
+                Statement.RETURN_GENERATED_KEYS);
+        pstmt.execute();
     }
 
     @Override
-    public void deleteById(Integer integer) {
-
+    public void deleteById(Integer integer) throws SQLException {
+        var id = integer;
+        String sql = "DELETE FROM endereco WHERE ${}";
+        PreparedStatement pstmt = conn.prepareStatement(sql,
+                Statement.RETURN_GENERATED_KEYS);
+        pstmt.execute();
     }
 
     @Override
